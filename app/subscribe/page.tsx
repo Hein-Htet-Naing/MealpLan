@@ -1,5 +1,7 @@
 const Subscribe = () => {
-  return <div className="text-white">Subscribe Page</div>;
+  return <div className="">
+    
+  </div>;
 };
 
 export default Subscribe;
