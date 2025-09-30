@@ -1,8 +1,8 @@
 import { currentUser } from "@clerk/nextjs/server";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-export async function POST(req: NextRequest) {
+export async function POST() {
   try {
     console.log("Creating profile...");
 
@@ -54,8 +54,4 @@ export async function POST(req: NextRequest) {
       status: 500,
     });
   }
-}
-
-export async function GET(req: NextRequest) {
-  return NextResponse.json({ message: "This is your create-profile API" });
 }
