@@ -1,4 +1,3 @@
-
 import { currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
@@ -6,7 +5,6 @@ import { prisma } from "@/lib/prisma";
 export async function POST() {
   try {
     const clerkUser = await currentUser();
-    console.log("Clerk user:", clerkUser);
     if (!clerkUser) {
       return NextResponse.json(
         { error: "Unauthorized! User not found" },
@@ -40,8 +38,6 @@ export async function POST() {
         subscriptionActive: false,
       },
     });
-
-    console.log("Inserted profile:", newProfile);
 
     return NextResponse.json(
       { message: "Profile created successfully", profile: newProfile },
