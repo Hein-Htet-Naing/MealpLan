@@ -48,7 +48,7 @@ export async function POST() {
       { message: "Profile created successfully", profile: newProfile },
       { status: 201 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error("API error:", error);
     return new Response(JSON.stringify({ error: "Internal Server Error" }), {
       status: 500,
