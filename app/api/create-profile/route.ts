@@ -1,11 +1,10 @@
+
 import { currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 export async function POST() {
   try {
-    console.log("Creating profile...");
-
     const clerkUser = await currentUser();
     console.log("Clerk user:", clerkUser);
     if (!clerkUser) {
