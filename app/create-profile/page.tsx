@@ -11,7 +11,7 @@ type ApiResponse = {
 export default function CreateProfile() {
   const { isLoaded, isSignedIn } = useUser();
   const router = useRouter();
-  const { mutate, isPending } = useMutation<ApiResponse, Error>({
+  const { mutate, isPending } = useMutation<ApiResponse, Error, void>({
     mutationFn: async () => {
       const res = await fetch("/api/create-profile", {
         method: "POST",
