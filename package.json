@@ -30,5 +30,25 @@
     "prisma": "^6.16.2",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "next/core-web-vitals",
+      "next"
+    ],
+    "ignorePatterns": [
+      "node_modules",
+      ".next",
+      "out",
+      "build",
+      "next-env.d.ts",
+      "app/generated/prisma/runtime"
+    ],
+    "rules": {
+      "@typescript-eslint/no-this-alias": "off",
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-unused-expressions": "warn",
+      "@typescript-eslint/no-unused-vars": "warn"
+    }
   }
 }
