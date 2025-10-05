@@ -2,7 +2,7 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 const isPublicRoute = createRouteMatcher(
-  ["/", "/sign-up(.*)?", "/subscribe(.*)?"]
+  ["/", "/sign-up(.*)?", "/subscribe(.*)?", "/api/webhok(.*)?"]
   // Public routes that don't require authentication
 );
 
