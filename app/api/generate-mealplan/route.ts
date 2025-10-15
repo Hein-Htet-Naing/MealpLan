@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 import { openAiSecretKey } from "@/lib/openrouter";
-import { parseMapDef } from "openai/_vendor/zod-to-json-schema/index.mjs";
-
 interface DailyMealPlan {
   Breakfast?: string;
   Lunch?: string;
@@ -73,7 +71,9 @@ export async function POST(request: NextRequest) {
       praseMealPlan = JSON.parse(aiContent);
     } catch (error: any) {
       return NextResponse.json(
-        { error: "Failed to parse meal plan. Please try again." },
+        {
+          error: "Failed to parse meal plan. Please try again." + error.message,
+        },
         { status: 500 }
       );
     }

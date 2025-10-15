@@ -30,6 +30,7 @@ async function SubscribeToPlan(
     const errorData: SubscribeError = await res.json();
     throw new Error(errorData.error || "Failed to create checkout session");
   }
+  //return url from api checkpoint
   const data: SubscribeResponse = await res.json();
   return data;
 }

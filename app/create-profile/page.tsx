@@ -34,6 +34,6 @@ export default function CreateProfile() {
     if (isLoaded && isSignedIn && !isPending) {
       mutate();
     }
-  }, [isLoaded, isSignedIn]);
+  }, [isLoaded, isSignedIn, isPending, mutate]);
   return <div className="py-16">Processing sign in....</div>;
 }

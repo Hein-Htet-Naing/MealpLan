@@ -59,8 +59,6 @@ export default function MealPlanDashboard() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-
     const payload: MealPlanInput = {
       dietType,
       calories,
